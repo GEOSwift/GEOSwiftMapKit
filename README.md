@@ -5,3 +5,9 @@ TODO:
 - Set up CI
 - Write README
 - Start CHANGELOG
+
+===
+
+TODO (iOS 13):
+
+- Add convenience initiatlizers for MKMultiPolyline and MKMultiPolygon

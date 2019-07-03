@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49B1182C22C96B4E00E638D7 /* GEOSwift+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1182B22C96B4E00E638D7 /* GEOSwift+MapKit.swift */; };
+		49B1182D22C96B4E00E638D7 /* GEOSwift+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1182B22C96B4E00E638D7 /* GEOSwift+MapKit.swift */; };
+		49B1182E22C96B4E00E638D7 /* GEOSwift+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1182B22C96B4E00E638D7 /* GEOSwift+MapKit.swift */; };
+		49B1183022C96BC100E638D7 /* GEOSwift+MapKitQuickLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1182F22C96BC100E638D7 /* GEOSwift+MapKitQuickLook.swift */; };
+		49B1183122C96BC100E638D7 /* GEOSwift+MapKitQuickLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1182F22C96BC100E638D7 /* GEOSwift+MapKitQuickLook.swift */; };
+		49B1183222C96BC100E638D7 /* GEOSwift+MapKitQuickLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1182F22C96BC100E638D7 /* GEOSwift+MapKitQuickLook.swift */; };
 		49CC1E9B22C435BB0079AC60 /* GEOSwiftMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CC1E9122C435BB0079AC60 /* GEOSwiftMapKit.framework */; };
 		49CC1EA022C435BB0079AC60 /* GEOSwiftMapKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CC1E9F22C435BB0079AC60 /* GEOSwiftMapKitTests.swift */; };
 		49CC1EA222C435BB0079AC60 /* GEOSwiftMapKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 49CC1E9422C435BB0079AC60 /* GEOSwiftMapKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		49E17EDC22C47A7B003931E0 /* Geometry+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E17EDB22C47A7B003931E0 /* Geometry+MapKit.swift */; };
 		49E17EEB22C47D52003931E0 /* GEOSwiftMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E17EE222C47D51003931E0 /* GEOSwiftMapKit.framework */; };
 		49E17F0722C47D67003931E0 /* GEOSwiftMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E17EFE22C47D66003931E0 /* GEOSwiftMapKit.framework */; };
-		49E17F1522C47DF6003931E0 /* Geometry+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E17EDB22C47A7B003931E0 /* Geometry+MapKit.swift */; };
-		49E17F1622C47DF7003931E0 /* Geometry+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E17EDB22C47A7B003931E0 /* Geometry+MapKit.swift */; };
 		49E17F1722C47ED2003931E0 /* GEOSwiftMapKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CC1E9F22C435BB0079AC60 /* GEOSwiftMapKitTests.swift */; };
 		49E17F1822C47ED3003931E0 /* GEOSwiftMapKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CC1E9F22C435BB0079AC60 /* GEOSwiftMapKitTests.swift */; };
 		49E17F1B22C48016003931E0 /* GEOSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E17F1A22C48016003931E0 /* GEOSwift.framework */; };
@@ -97,13 +100,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		49B1182B22C96B4E00E638D7 /* GEOSwift+MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GEOSwift+MapKit.swift"; sourceTree = "<group>"; };
+		49B1182F22C96BC100E638D7 /* GEOSwift+MapKitQuickLook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GEOSwift+MapKitQuickLook.swift"; sourceTree = "<group>"; };
 		49CC1E9122C435BB0079AC60 /* GEOSwiftMapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GEOSwiftMapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49CC1E9422C435BB0079AC60 /* GEOSwiftMapKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GEOSwiftMapKit.h; sourceTree = "<group>"; };
 		49CC1E9522C435BB0079AC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49CC1E9A22C435BB0079AC60 /* GEOSwiftMapKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GEOSwiftMapKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49CC1E9F22C435BB0079AC60 /* GEOSwiftMapKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GEOSwiftMapKitTests.swift; sourceTree = "<group>"; };
 		49CC1EA122C435BB0079AC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49E17EDB22C47A7B003931E0 /* Geometry+MapKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Geometry+MapKit.swift"; sourceTree = "<group>"; };
 		49E17EE222C47D51003931E0 /* GEOSwiftMapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GEOSwiftMapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E17EEA22C47D52003931E0 /* GEOSwiftMapKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GEOSwiftMapKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E17EFE22C47D66003931E0 /* GEOSwiftMapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GEOSwiftMapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,7 +200,8 @@
 			children = (
 				49CC1E9522C435BB0079AC60 /* Info.plist */,
 				49CC1E9422C435BB0079AC60 /* GEOSwiftMapKit.h */,
-				49E17EDB22C47A7B003931E0 /* Geometry+MapKit.swift */,
+				49B1182B22C96B4E00E638D7 /* GEOSwift+MapKit.swift */,
+				49B1182F22C96BC100E638D7 /* GEOSwift+MapKitQuickLook.swift */,
 			);
 			path = GEOSwiftMapKit;
 			sourceTree = "<group>";
@@ -257,11 +262,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49CC1EA322C435BB0079AC60 /* Build configuration list for PBXNativeTarget "GEOSwiftMapKit-iOS" */;
 			buildPhases = (
+				49E17F2222C480BE003931E0 /* Swiftlint */,
 				49CC1E8C22C435BB0079AC60 /* Headers */,
 				49CC1E8D22C435BB0079AC60 /* Sources */,
 				49CC1E8E22C435BB0079AC60 /* Frameworks */,
 				49CC1E8F22C435BB0079AC60 /* Resources */,
-				49E17F2222C480BE003931E0 /* Swiftlint */,
+				49332B0D22CD528E007CABDF /* Copy frameworks for Playground */,
 			);
 			buildRules = (
 			);
@@ -466,6 +472,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		49332B0D22CD528E007CABDF /* Copy frameworks for Playground */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy frameworks for Playground";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This fixes playground unable to find the framework \ncp -R $SRCROOT/Carthage/Build/iOS/geos.framework $BUILT_PRODUCTS_DIR/\ncp -R $SRCROOT/Carthage/Build/iOS/GEOSwift.framework $BUILT_PRODUCTS_DIR/\n";
+		};
 		49E17F2222C480BE003931E0 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -530,7 +554,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49E17EDC22C47A7B003931E0 /* Geometry+MapKit.swift in Sources */,
+				49B1183022C96BC100E638D7 /* GEOSwift+MapKitQuickLook.swift in Sources */,
+				49B1182C22C96B4E00E638D7 /* GEOSwift+MapKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,7 +571,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49E17F1522C47DF6003931E0 /* Geometry+MapKit.swift in Sources */,
+				49B1183122C96BC100E638D7 /* GEOSwift+MapKitQuickLook.swift in Sources */,
+				49B1182D22C96B4E00E638D7 /* GEOSwift+MapKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,7 +588,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49E17F1622C47DF7003931E0 /* Geometry+MapKit.swift in Sources */,
+				49B1183222C96BC100E638D7 /* GEOSwift+MapKitQuickLook.swift in Sources */,
+				49B1182E22C96B4E00E638D7 /* GEOSwift+MapKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
