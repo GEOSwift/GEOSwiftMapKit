@@ -177,6 +177,12 @@ extension Geometry: GEOSwiftQuickLook {
     }
 }
 
+extension Envelope: GEOSwiftQuickLook {
+    func quickLookDraw(in context: CGContext, imageSize: CGSize, mapRect: MKMapRect) {
+        geometry.quickLookDraw(in: context, imageSize: imageSize, mapRect: mapRect)
+    }
+}
+
 // MARK: - MKMapView Snapshotting
 private extension MKMapView {
     /**
@@ -187,7 +193,6 @@ private extension MKMapView {
         let options = MKMapSnapshotter.Options()
         options.region = region
         options.size = frame.size
-
         var snapshotImage: UIImage?
         let backgroundQueue = DispatchQueue.global(qos: .background)
         let snapshotter = MKMapSnapshotter(options: options)
@@ -197,7 +202,6 @@ private extension MKMapView {
             semaphore.signal()
         }
         _ = semaphore.wait(timeout: .now() + 3)
-
         return snapshotImage
     }
 }
