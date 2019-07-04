@@ -488,7 +488,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# This fixes playground unable to find the framework \ncp -R $SRCROOT/Carthage/Build/iOS/geos.framework $BUILT_PRODUCTS_DIR/\ncp -R $SRCROOT/Carthage/Build/iOS/GEOSwift.framework $BUILT_PRODUCTS_DIR/\n";
+			shellScript = "# This fixes playground unable to find the framework \nrm -rf $BUILT_PRODUCTS_DIR/geos.framework\nrm -rf $BUILT_PRODUCTS_DIR/GEOSwift.framework\ncp -R $SRCROOT/Carthage/Build/iOS/geos.framework $BUILT_PRODUCTS_DIR/geos.framework\ncp -R $SRCROOT/Carthage/Build/iOS/GEOSwift.framework $BUILT_PRODUCTS_DIR/GEOSwift.framework\n";
+			showEnvVarsInLog = 0;
 		};
 		49E17F2222C480BE003931E0 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
