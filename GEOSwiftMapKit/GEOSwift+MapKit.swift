@@ -7,12 +7,12 @@ public extension CLLocationCoordinate2D {
     }
 }
 
-extension Point {
-    public init(longitude: Double, latitude: Double) {
+public extension Point {
+    init(longitude: Double, latitude: Double) {
         self.init(x: longitude, y: latitude)
     }
 
-    public init(_ coordinate: CLLocationCoordinate2D) {
+    init(_ coordinate: CLLocationCoordinate2D) {
         self.init(x: coordinate.longitude, y: coordinate.latitude)
     }
 }
@@ -53,7 +53,7 @@ public extension MKPolygon {
 }
 
 open class GeometryMapShape: MKShape, MKOverlay {
-    let geometry: GeometryConvertible
+    public let geometry: GeometryConvertible
 
     private let _coordinate: CLLocationCoordinate2D
     override open var coordinate: CLLocationCoordinate2D {

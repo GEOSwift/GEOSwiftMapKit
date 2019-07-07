@@ -14,12 +14,18 @@
 		49B1183122C96BC100E638D7 /* GEOSwift+MapKitQuickLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1182F22C96BC100E638D7 /* GEOSwift+MapKitQuickLook.swift */; };
 		49B1183222C96BC100E638D7 /* GEOSwift+MapKitQuickLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1182F22C96BC100E638D7 /* GEOSwift+MapKitQuickLook.swift */; };
 		49CC1E9B22C435BB0079AC60 /* GEOSwiftMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CC1E9122C435BB0079AC60 /* GEOSwiftMapKit.framework */; };
-		49CC1EA022C435BB0079AC60 /* GEOSwiftMapKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CC1E9F22C435BB0079AC60 /* GEOSwiftMapKitTests.swift */; };
 		49CC1EA222C435BB0079AC60 /* GEOSwiftMapKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 49CC1E9422C435BB0079AC60 /* GEOSwiftMapKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49CF3D6F22D10BC10076F6E5 /* MapKit+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF3D6E22D10BC10076F6E5 /* MapKit+Equatable.swift */; };
+		49CF3D7022D10BC10076F6E5 /* MapKit+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF3D6E22D10BC10076F6E5 /* MapKit+Equatable.swift */; };
+		49CF3D7122D10BC10076F6E5 /* MapKit+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF3D6E22D10BC10076F6E5 /* MapKit+Equatable.swift */; };
+		49CF3D7422D10BDB0076F6E5 /* QuickLookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF3D7222D10BDB0076F6E5 /* QuickLookTests.swift */; };
+		49CF3D7522D10BDB0076F6E5 /* QuickLookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF3D7222D10BDB0076F6E5 /* QuickLookTests.swift */; };
+		49CF3D7622D10BDB0076F6E5 /* QuickLookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF3D7222D10BDB0076F6E5 /* QuickLookTests.swift */; };
+		49CF3D7722D10BDB0076F6E5 /* GEOSwift+MapKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF3D7322D10BDB0076F6E5 /* GEOSwift+MapKitTests.swift */; };
+		49CF3D7822D10BDB0076F6E5 /* GEOSwift+MapKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF3D7322D10BDB0076F6E5 /* GEOSwift+MapKitTests.swift */; };
+		49CF3D7922D10BDB0076F6E5 /* GEOSwift+MapKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF3D7322D10BDB0076F6E5 /* GEOSwift+MapKitTests.swift */; };
 		49E17EEB22C47D52003931E0 /* GEOSwiftMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E17EE222C47D51003931E0 /* GEOSwiftMapKit.framework */; };
 		49E17F0722C47D67003931E0 /* GEOSwiftMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E17EFE22C47D66003931E0 /* GEOSwiftMapKit.framework */; };
-		49E17F1722C47ED2003931E0 /* GEOSwiftMapKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CC1E9F22C435BB0079AC60 /* GEOSwiftMapKitTests.swift */; };
-		49E17F1822C47ED3003931E0 /* GEOSwiftMapKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CC1E9F22C435BB0079AC60 /* GEOSwiftMapKitTests.swift */; };
 		49E17F1B22C48016003931E0 /* GEOSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E17F1A22C48016003931E0 /* GEOSwift.framework */; };
 		49E17F1D22C48026003931E0 /* GEOSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E17F1C22C48026003931E0 /* GEOSwift.framework */; };
 		49E17F1F22C48038003931E0 /* GEOSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E17F1E22C48038003931E0 /* GEOSwift.framework */; };
@@ -106,8 +112,10 @@
 		49CC1E9422C435BB0079AC60 /* GEOSwiftMapKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GEOSwiftMapKit.h; sourceTree = "<group>"; };
 		49CC1E9522C435BB0079AC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49CC1E9A22C435BB0079AC60 /* GEOSwiftMapKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GEOSwiftMapKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		49CC1E9F22C435BB0079AC60 /* GEOSwiftMapKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GEOSwiftMapKitTests.swift; sourceTree = "<group>"; };
 		49CC1EA122C435BB0079AC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49CF3D6E22D10BC10076F6E5 /* MapKit+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MapKit+Equatable.swift"; sourceTree = "<group>"; };
+		49CF3D7222D10BDB0076F6E5 /* QuickLookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickLookTests.swift; sourceTree = "<group>"; };
+		49CF3D7322D10BDB0076F6E5 /* GEOSwift+MapKitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GEOSwift+MapKitTests.swift"; sourceTree = "<group>"; };
 		49E17EE222C47D51003931E0 /* GEOSwiftMapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GEOSwiftMapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E17EEA22C47D52003931E0 /* GEOSwiftMapKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GEOSwiftMapKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49E17EFE22C47D66003931E0 /* GEOSwiftMapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GEOSwiftMapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,7 +218,9 @@
 			isa = PBXGroup;
 			children = (
 				49CC1EA122C435BB0079AC60 /* Info.plist */,
-				49CC1E9F22C435BB0079AC60 /* GEOSwiftMapKitTests.swift */,
+				49CF3D6E22D10BC10076F6E5 /* MapKit+Equatable.swift */,
+				49CF3D7322D10BDB0076F6E5 /* GEOSwift+MapKitTests.swift */,
+				49CF3D7222D10BDB0076F6E5 /* QuickLookTests.swift */,
 			);
 			path = GEOSwiftMapKitTests;
 			sourceTree = "<group>";
@@ -564,7 +574,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49CC1EA022C435BB0079AC60 /* GEOSwiftMapKitTests.swift in Sources */,
+				49CF3D6F22D10BC10076F6E5 /* MapKit+Equatable.swift in Sources */,
+				49CF3D7722D10BDB0076F6E5 /* GEOSwift+MapKitTests.swift in Sources */,
+				49CF3D7422D10BDB0076F6E5 /* QuickLookTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,7 +593,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49E17F1722C47ED2003931E0 /* GEOSwiftMapKitTests.swift in Sources */,
+				49CF3D7022D10BC10076F6E5 /* MapKit+Equatable.swift in Sources */,
+				49CF3D7822D10BDB0076F6E5 /* GEOSwift+MapKitTests.swift in Sources */,
+				49CF3D7522D10BDB0076F6E5 /* QuickLookTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,7 +612,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49E17F1822C47ED3003931E0 /* GEOSwiftMapKitTests.swift in Sources */,
+				49CF3D7122D10BC10076F6E5 /* MapKit+Equatable.swift in Sources */,
+				49CF3D7922D10BDB0076F6E5 /* GEOSwift+MapKitTests.swift in Sources */,
+				49CF3D7622D10BDB0076F6E5 /* QuickLookTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,7 +692,7 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
 			};
 			name = Debug;
 		};
@@ -727,7 +743,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
-				TVOS_DEPLOYMENT_TARGET = 9.0;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -777,6 +793,10 @@
 		49CC1EA722C435BB0079AC60 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GEOSwiftMapKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -792,6 +812,10 @@
 		49CC1EA822C435BB0079AC60 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GEOSwiftMapKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -849,6 +873,10 @@
 		49E17EF722C47D52003931E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = GEOSwiftMapKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -864,6 +892,10 @@
 		49E17EF822C47D52003931E0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = GEOSwiftMapKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -921,6 +953,10 @@
 		49E17F1322C47D67003931E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = GEOSwiftMapKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -935,6 +971,10 @@
 		49E17F1422C47D67003931E0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = GEOSwiftMapKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

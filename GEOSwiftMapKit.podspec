@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
     file: 'LICENSE'
   }
   s.authors = 'Andrew Hershberger'
-  s.platforms = { ios: "8.0", osx: "10.9", tvos: "9.0" }
+  s.platforms = { ios: "8.0", osx: "10.9", tvos: "9.2" }
   s.source = {
     git: 'https://github.com/GEOSwift/GEOSwiftMapKit.git',
     tag: s.version
