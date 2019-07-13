@@ -1,10 +1,9 @@
 TODO:
 
-- Migrate features from GEOSwift v4
-- Set up and verify CocoaPods & Carthage support
+- Finish migrating tests
 - Set up CI
+- Set up and verify CocoaPods & Carthage support
 - Write README
-- Start CHANGELOG
 
 ===
 
