@@ -8,6 +8,7 @@ TODO:
 
 ===
 
-TODO (iOS 13):
+TODO:
 
+- Support Xcode 11
 - Add convenience initiatlizers for MKMultiPolyline and MKMultiPolygon
