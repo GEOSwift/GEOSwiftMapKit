@@ -11,7 +11,7 @@ env:
     - WORKSPACE=GEOSwiftMapKit.xcworkspace
   matrix:
     - PLATFORM=iOS SCHEME=GEOSwiftMapKit-iOS SDK=iphonesimulator12.2 DESTINATION="platform=iOS Simulator,OS=12.2,name=iPhone XS" 
-    - PLATFORM=tvOS SCHEME=GEOSwiftMapKit-tvOS SDK=appletvsimulator12.2 DESTINATION="platform=tvOS Simulator,OS=12.2"
+    - PLATFORM=tvOS SCHEME=GEOSwiftMapKit-tvOS SDK=appletvsimulator12.2 DESTINATION="platform=tvOS Simulator,OS=12.2,name=Apple TV"
     - PLATFORM=macOS SCHEME=GEOSwiftMapKit-macOS SDK=macosx10.14 DESTINATION="platform=OS X"
 
 before_install:
