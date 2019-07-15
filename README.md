@@ -1,6 +1,5 @@
 TODO:
 
-- Finish migrating tests
 - Set up CI
 - Set up and verify CocoaPods & Carthage support
 - Write README

@@ -26,6 +26,21 @@ final class MapKitTests: XCTestCase {
         XCTAssertEqual(Point(coord), Point(x: 1, y: 2))
     }
 
+    func testWorldPolygon() {
+        // just make sure it doesn't crash
+        _ = GEOSwift.Polygon.world
+    }
+
+    func testCreateMKCoordinateRegionContainingGeometry() {
+        let lineString = try! LineString(wkt: "LINESTRING(3 4,10 50,20 25)")
+
+        let region = try? MKCoordinateRegion(containing: lineString)
+
+        XCTAssertEqual(region, MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: 27, longitude: 11.5),
+            span: MKCoordinateSpan(latitudeDelta: 46, longitudeDelta: 17)))
+    }
+
     func testCreateMKPointAnnotationFromPoint() {
         let point = Point(x: 45, y: 9)
 

@@ -17,6 +17,29 @@ public extension Point {
     }
 }
 
+public extension GEOSwift.Polygon {
+    static var world: GEOSwift.Polygon {
+        // swiftlint:disable:next force_try
+        return try! Polygon(exterior: Polygon.LinearRing(points: [
+            Point(x: -180, y: 90),
+            Point(x: -180, y: -90),
+            Point(x: 180, y: -90),
+            Point(x: 180, y: 90),
+            Point(x: -180, y: 90)]))
+    }
+}
+
+public extension MKCoordinateRegion {
+    init(containing geometry: GeometryConvertible) throws {
+        let envelope = try geometry.geometry.envelope()
+        let center = try CLLocationCoordinate2D(envelope.geometry.centroid())
+        let span = MKCoordinateSpan(
+            latitudeDelta: envelope.maxY - envelope.minY,
+            longitudeDelta: envelope.maxX - envelope.minX)
+        self.init(center: center, span: span)
+    }
+}
+
 public extension MKPointAnnotation {
     convenience init(point: Point) {
         self.init()
