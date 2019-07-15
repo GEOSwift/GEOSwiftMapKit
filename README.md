@@ -1,6 +1,5 @@
 TODO:
 
-- Set up CI
 - Set up and verify CocoaPods & Carthage support
 - Write README
 
