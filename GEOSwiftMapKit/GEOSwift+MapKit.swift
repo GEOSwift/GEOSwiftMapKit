@@ -29,6 +29,7 @@ public extension GEOSwift.Polygon {
     }
 }
 
+// Note that this does not currently do a good job of supporting geometries that cross the anti-meridian
 public extension MKCoordinateRegion {
     init(containing geometry: GeometryConvertible) throws {
         let envelope = try geometry.geometry.envelope()
@@ -75,6 +76,7 @@ public extension MKPolygon {
     }
 }
 
+// Note that this does not currently do a good job of supporting geometries that cross the anti-meridian
 open class GeometryMapShape: MKShape, MKOverlay {
     public let geometry: GeometryConvertible
 

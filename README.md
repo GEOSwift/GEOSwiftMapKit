@@ -1,6 +1,5 @@
 TODO:
 
-- Add test cases for anti-meridian-crossing stuff
 - Write README
 
 ===
