@@ -89,8 +89,8 @@ open class GeometryMapShape: MKShape, MKOverlay {
         self.geometry = geometry
         self._coordinate = try CLLocationCoordinate2D(geometry.centroid())
         let envelope = try geometry.envelope()
-        let topLeft = MKMapPoint(CLLocationCoordinate2D(envelope.topLeft))
-        let bottomRight = MKMapPoint(CLLocationCoordinate2D(envelope.bottomRight))
+        let topLeft = MKMapPoint(CLLocationCoordinate2D(envelope.minXMaxY))
+        let bottomRight = MKMapPoint(CLLocationCoordinate2D(envelope.maxXMinY))
         self.boundingMapRect = MKMapRect(
             origin: topLeft,
             size: MKMapSize(
