@@ -1,1 +1,1 @@
-github "GEOSwift/GEOSwift" "feature/version-5-rewrite"
+github "GEOSwift/GEOSwift" ~> 5.0
