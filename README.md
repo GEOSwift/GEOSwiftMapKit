@@ -1,10 +1,10 @@
 # GEOSwiftMapKit
 
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/GEOSwiftMapKit.svg)](https://cocoapods.org/pods/GEOSwiftMapKit)
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Platform](https://img.shields.io/cocoapods/p/GEOSwiftMapKit.svg?style=flat)](https://github.com/GEOSwift/GEOSwiftMapKit)
-[![Build Status](https://travis-ci.org/GEOSwift/GEOSwiftMapKit.svg?branch=master)](https://travis-ci.org/GEOSwift/GEOSwiftMapKit)
-[![codecov](https://codecov.io/gh/GEOSwift/GEOSwiftMapKit/branch/master/graph/badge.svg)](https://codecov.io/gh/GEOSwift/GEOSwiftMapKit)
+![Cocoapods](https://img.shields.io/cocoapods/v/GEOSwiftMapKit)
+![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen?link=https%3A%2F%2Fgithub.com%2FCarthage%2FCarthage)
+![Cocoapods platforms](https://img.shields.io/cocoapods/p/GEOSwiftMapKit)
+![Travis (.org) branch](https://img.shields.io/travis/GEOSwift/GEOSwiftMapKit/master)
+![Codecov branch](https://img.shields.io/codecov/c/github/GEOSwift/GEOSwiftMapKit/master)
 
 See [GEOSwift](https://github.com/GEOSwift/GEOSwift) for full details
 
