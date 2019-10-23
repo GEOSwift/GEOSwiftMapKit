@@ -22,5 +22,5 @@ Pod::Spec.new do |s|
   }
   s.source_files = 'GEOSwiftMapKit/*.{swift,h}'
   s.macos.exclude_files = 'GEOSwiftMapKit/GEOSwift+MapKitQuickLook.swift'
-  s.dependency 'GEOSwift', '5.0.0'
+  s.dependency 'GEOSwift', '~> 5.0'
 end
