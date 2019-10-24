@@ -78,7 +78,11 @@ final class MapKitTests: XCTestCase {
         let mkPolygon = MKPolygon(linearRing: linearRing)
 
         XCTAssertEqual(mkPolygon.pointCount, 5)
-        XCTAssertEqual(mkPolygon.interiorPolygons?.count, 0)
+        if #available(iOS 13.0, tvOS 13.0, macOS 10.15, *) {
+            XCTAssertNil(mkPolygon.interiorPolygons)
+        } else {
+            XCTAssertEqual(mkPolygon.interiorPolygons?.count, 0)
+        }
     }
 
     func testCreateMKPolygonFromPolygon() {
