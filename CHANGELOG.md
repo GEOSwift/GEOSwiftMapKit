@@ -1,6 +1,7 @@
 ## 1.1.0
 
 * Relaxed GEOSwift dependency requirement for CocoaPods
+* Added support for MKMultiPolyline and MKMultiPolygon
 
 ## 1.0.0
 

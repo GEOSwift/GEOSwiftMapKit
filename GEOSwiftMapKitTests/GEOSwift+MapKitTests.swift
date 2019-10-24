@@ -96,6 +96,34 @@ final class MapKitTests: XCTestCase {
         XCTAssertEqual(mkPolygon.interiorPolygons?.first?.pointCount, 4)
     }
 
+    func testCreateMKMultiPolylineFromMultiLineString() {
+        guard #available(iOS 13.0, tvOS 13.0, macOS 10.15, *) else {
+            return
+        }
+
+        let multiLineString = try! MultiLineString(lineStrings: [
+            LineString(points: [Point(x: 0, y: 0), Point(x: 0, y: 1)]),
+            LineString(points: [Point(x: 0, y: 0), Point(x: 1, y: 0)])])
+
+        let mkMultiPolyline = MKMultiPolyline(multiLineString: multiLineString)
+
+        XCTAssertEqual(mkMultiPolyline.polylines.count, multiLineString.lineStrings.count)
+    }
+
+    func testCreateMKMultiPolygonFromMultiPolygon() {
+        guard #available(iOS 13.0, tvOS 13.0, macOS 10.15, *) else {
+            return
+        }
+
+        let multiPolygon = try! MultiPolygon(polygons: [
+            Polygon(wkt: "POLYGON((35 10, 45 45, 15 40, 10 20, 35 10),(20 30, 35 35, 30 20, 20 30))"),
+            Polygon(wkt: "POLYGON((35 10, 45 45, 15 40, 10 20, 35 10))")])
+
+        let mkMultiPolygon = MKMultiPolygon(multiPolygon: multiPolygon)
+
+        XCTAssertEqual(mkMultiPolygon.polygons.count, multiPolygon.polygons.count)
+    }
+
     func testGeometryMapShape() {
         let polygon = try! Polygon(wkt: "POLYGON((0 0, 2 0, 2 2, 0 2, 0 0))")
 
