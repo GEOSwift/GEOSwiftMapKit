@@ -76,6 +76,20 @@ public extension MKPolygon {
     }
 }
 
+@available(iOS 13.0, tvOS 13.0, macOS 10.15, *)
+public extension MKMultiPolyline {
+    convenience init(multiLineString: MultiLineString) {
+        self.init(multiLineString.lineStrings.map(MKPolyline.init))
+    }
+}
+
+@available(iOS 13.0, tvOS 13.0, macOS 10.15, *)
+public extension MKMultiPolygon {
+    convenience init(multiPolygon: MultiPolygon) {
+        self.init(multiPolygon.polygons.map(MKPolygon.init))
+    }
+}
+
 // Note that this does not currently do a good job of supporting geometries that cross the anti-meridian
 open class GeometryMapShape: MKShape, MKOverlay {
     public let geometry: GeometryConvertible

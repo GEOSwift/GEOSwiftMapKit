@@ -50,8 +50,11 @@ let point = try! Point(wkt: "POINT(10 45)")
 let geometry1 = try! Geometry(wkt: "POLYGON((35 10, 45 45.5, 15 40, 10 20, 35 10),(20 30, 35 35, 30 20, 20 30))")
 
 // The same geometry can be represented in binary form as WKB
-let WKB = geometryWKB()
-let geometry2 = try! Geometry(wkb: WKB as Data)
+guard let wkbURL = Bundle.main.url(forResource: "example", withExtension: "wkb"),
+    let wkbData = try? Data(contentsOf: wkbURL) else {
+        exit(1)
+}
+let geometry2 = try! Geometry(wkb: wkbData)
 
 if geometry1 == geometry2 && geometry1 != .point(point) {
     print("The two geometries are equal!")
