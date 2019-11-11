@@ -17,6 +17,10 @@
 		493F2D3D22DC4A3C00BE38EA /* multilinestring.png in Resources */ = {isa = PBXBuildFile; fileRef = 493F2D3B22DC4A3C00BE38EA /* multilinestring.png */; };
 		493F2D4022DC4A3C00BE38EA /* multipolygon.png in Resources */ = {isa = PBXBuildFile; fileRef = 493F2D3C22DC4A3C00BE38EA /* multipolygon.png */; };
 		493F2D4422DC4BEB00BE38EA /* envelope.png in Resources */ = {isa = PBXBuildFile; fileRef = 493F2D4322DC4BEB00BE38EA /* envelope.png */; };
+		49A3DE2C2378E6520031B8CD /* QuickLookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF3D7222D10BDB0076F6E5 /* QuickLookTests.swift */; };
+		49A3DE2D2378E6550031B8CD /* QuickLookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF3D7222D10BDB0076F6E5 /* QuickLookTests.swift */; };
+		49A3DE2E2378E65A0031B8CD /* GEOSwift+MapKitQuickLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1182F22C96BC100E638D7 /* GEOSwift+MapKitQuickLook.swift */; };
+		49A3DE2F2378E65B0031B8CD /* GEOSwift+MapKitQuickLook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1182F22C96BC100E638D7 /* GEOSwift+MapKitQuickLook.swift */; };
 		49B1182C22C96B4E00E638D7 /* GEOSwift+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1182B22C96B4E00E638D7 /* GEOSwift+MapKit.swift */; };
 		49B1182D22C96B4E00E638D7 /* GEOSwift+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1182B22C96B4E00E638D7 /* GEOSwift+MapKit.swift */; };
 		49B1182E22C96B4E00E638D7 /* GEOSwift+MapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B1182B22C96B4E00E638D7 /* GEOSwift+MapKit.swift */; };
@@ -628,6 +632,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49A3DE2E2378E65A0031B8CD /* GEOSwift+MapKitQuickLook.swift in Sources */,
 				49B1182D22C96B4E00E638D7 /* GEOSwift+MapKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -637,6 +642,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49CF3D7022D10BC10076F6E5 /* MapKit+Equatable.swift in Sources */,
+				49A3DE2C2378E6520031B8CD /* QuickLookTests.swift in Sources */,
 				49CF3D7822D10BDB0076F6E5 /* GEOSwift+MapKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,6 +651,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49A3DE2F2378E65B0031B8CD /* GEOSwift+MapKitQuickLook.swift in Sources */,
 				49B1182E22C96B4E00E638D7 /* GEOSwift+MapKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -654,6 +661,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49CF3D7122D10BC10076F6E5 /* MapKit+Equatable.swift in Sources */,
+				49A3DE2D2378E6550031B8CD /* QuickLookTests.swift in Sources */,
 				49CF3D7922D10BDB0076F6E5 /* GEOSwift+MapKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
