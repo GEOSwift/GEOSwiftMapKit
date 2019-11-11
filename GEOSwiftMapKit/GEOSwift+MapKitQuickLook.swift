@@ -1,3 +1,5 @@
+#if os(iOS)
+
 import UIKit
 import MapKit
 import GEOSwift
@@ -178,3 +180,5 @@ private extension MKMapView {
         return snapshotImage
     }
 }
+
+#endif

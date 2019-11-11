@@ -1,2 +1,2 @@
-github "GEOSwift/GEOSwift" "5.2.0"
-github "GEOSwift/geos" "4.0.3"
+github "GEOSwift/GEOSwift" "6.0.0"
+github "GEOSwift/geos" "4.1.0"
