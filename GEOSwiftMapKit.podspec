@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'GEOSwiftMapKit'
-  s.version = '1.2.0'
+  s.version = '2.0.0'
   s.swift_version = '5.1'
   s.cocoapods_version = '>= 1.4.0'
   s.summary = 'MapKit support for GEOSwift'
@@ -22,5 +22,5 @@ Pod::Spec.new do |s|
   }
   s.source_files = 'GEOSwiftMapKit/*.{swift,h}'
   s.macos.exclude_files = 'GEOSwiftMapKit/GEOSwift+MapKitQuickLook.swift'
-  s.dependency 'GEOSwift', '~> 6.0'
+  s.dependency 'GEOSwift', '~> 7.0'
 end
