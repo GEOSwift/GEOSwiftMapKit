@@ -1,6 +1,6 @@
 ## 2.0.0
 
-* [#8](https://github.com/GEOSwift/GEOSwiftMapKit/pull/8) Update to GEOSwift 7
+* [#9](https://github.com/GEOSwift/GEOSwiftMapKit/pull/9) Update to GEOSwift 7
 
 ## 1.2.0
 
