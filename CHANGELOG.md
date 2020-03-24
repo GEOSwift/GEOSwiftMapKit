@@ -1,3 +1,7 @@
+## 2.0.0
+
+* [#8](https://github.com/GEOSwift/GEOSwiftMapKit/pull/8) Update to GEOSwift 7
+
 ## 1.2.0
 
 * [#7](https://github.com/GEOSwift/GEOSwiftMapKit/pull/7) Swift PM Support
