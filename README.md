@@ -4,7 +4,7 @@
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen)](https://github.com/Carthage/Carthage)
 [![SwiftPM Compatible](https://img.shields.io/badge/SwiftPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager/)
 [![Supported Platforms](https://img.shields.io/cocoapods/p/GEOSwiftMapKit)](https://github.com/GEOSwift/GEOSwiftMapKit)
-[![Build Status](https://img.shields.io/travis/GEOSwift/GEOSwiftMapKit/master)](https://travis-ci.org/GEOSwift/GEOSwiftMapKit)
+[![Build Status](https://img.shields.io/travis/GEOSwift/GEOSwiftMapKit/master)](https://travis-ci.com/GEOSwift/GEOSwiftMapKit)
 [![Code Coverage](https://img.shields.io/codecov/c/github/GEOSwift/GEOSwiftMapKit/master)](https://codecov.io/gh/GEOSwift/GEOSwiftMapKit)
 
 See [GEOSwift](https://github.com/GEOSwift/GEOSwift) for full details
