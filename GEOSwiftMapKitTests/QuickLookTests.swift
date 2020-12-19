@@ -118,7 +118,7 @@ final class QuickLookTests: XCTestCase {
 
     // MARK: - Helpers
 
-    /// SnapshotImages are from iPhone XS, so use that simulator when running unit tests
+    /// SnapshotImages are from iPhone 11, so use that simulator when running unit tests
     func verifyDrawing(with geometry: GEOSwiftQuickLook,
                        expected: SnapshotImage,
                        line: UInt = #line) {
