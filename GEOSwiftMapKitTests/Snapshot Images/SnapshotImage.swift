@@ -12,7 +12,7 @@ enum SnapshotImage: String {
     case envelope
 
     var name: String {
-        return rawValue + ".png"
+        rawValue + ".png"
     }
 
     var data: Data? {

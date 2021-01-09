@@ -11,7 +11,7 @@ See [GEOSwift](https://github.com/GEOSwift/GEOSwift) for full details
 
 ## Requirements
 
-* iOS 8.0+, tvOS 9.2+, macOS 10.9+ (CocoaPods, Carthage, Swift PM)
+* iOS 9.0+, tvOS 9.2+, macOS 10.9+ (CocoaPods, Carthage, Swift PM)
 * Swift 5.1
 
 > GEOS is licensed under LGPL 2.1 and its compatibility with static linking is
@@ -32,7 +32,7 @@ at least controversial. Use of geos without dynamic linking is discouraged.
 
 1. Add the following to your Cartfile:
 
-        github "GEOSwift/GEOSwiftMapKit" ~> 2.0.0
+        github "GEOSwift/GEOSwiftMapKit" ~> 3.0.0
 
 2. Finish updating your project by following the [typical Carthage
 workflow](https://github.com/Carthage/Carthage#quick-start).
@@ -41,7 +41,7 @@ workflow](https://github.com/Carthage/Carthage#quick-start).
 
 1. Update the top-level dependencies in your `Package.swift` to include:
 
-        .package(url: "https://github.com/GEOSwift/GEOSwiftMapKit.git", from: "2.0.0")
+        .package(url: "https://github.com/GEOSwift/GEOSwiftMapKit.git", from: "3.0.0")
 
 2. Update the target dependencies in your `Package.swift` to include
 
@@ -49,9 +49,8 @@ workflow](https://github.com/Carthage/Carthage#quick-start).
 
 ### Playground
 
-Explore more, interactively, in the playground. It can be found inside
-`GEOSwiftMapKit` workspace. Open the workspace in Xcode, build the
-`GEOSwiftMapKit` framework and open the playground file.
+Explore more, interactively, in the playground. Open the project in Xcode,
+select the `GEOSwiftMapKit-iOS` scheme and open the playground file.
 
 ![Playground](/README-images/playground.png)
 
@@ -60,12 +59,20 @@ Explore more, interactively, in the playground. It can be found inside
 To make a contribution:
 
 * Fork the repo
-* Start from the `develop` branch and create a branch with a name that describes
+* Start from the `main` branch and create a branch with a name that describes
   your contribution
-* Run `$ carthage update`
+* Run `$ xed Package.swift` to open the project in Xcode.
+* Run `$ swiftlint` from the repo root and resolve any issues.
+* Update GEOSwiftMapKit.xcodeproj: After making your changes, you also need to
+  update the Xcode project. You'll need a version of Carthage greater than 0.36.0
+  so that you can use the `--use-xcframeworks` option. Run
+  `$ carthage update --use-xcframeworks` to generate GEOSwift.xcframework and
+  geos.xcframework. Then open the GEOSwiftMapKit.xcodeproj and ensure that it
+  works with your changes. You'll likely only need to make changes if you've
+  added, removed, or renamed files.
 * Sign in to travis-ci.org (if you've never signed in before, CI won't run to
   verify your pull request)
-* Push your branch and create a pull request to develop
+* Push your branch and create a pull request to `main`
 * One of the maintainers will review your code and may request changes
 * If your pull request is accepted, one of the maintainers should update the
   changelog before merging it

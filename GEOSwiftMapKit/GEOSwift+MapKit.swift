@@ -96,7 +96,7 @@ open class GeometryMapShape: MKShape, MKOverlay {
 
     private let _coordinate: CLLocationCoordinate2D
     override open var coordinate: CLLocationCoordinate2D {
-        return _coordinate
+        _coordinate
     }
 
     public let boundingMapRect: MKMapRect

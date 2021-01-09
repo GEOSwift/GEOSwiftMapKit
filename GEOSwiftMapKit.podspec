@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'GEOSwiftMapKit'
-  s.version = '2.0.0'
+  s.version = '3.0.0'
   s.swift_version = '5.1'
   s.cocoapods_version = '>= 1.4.0'
   s.summary = 'MapKit support for GEOSwift'
@@ -15,12 +15,12 @@ Pod::Spec.new do |s|
     file: 'LICENSE'
   }
   s.authors = 'Andrew Hershberger'
-  s.platforms = { ios: "8.0", osx: "10.9", tvos: "9.2" }
+  s.platforms = { ios: "9.0", osx: "10.9", tvos: "9.2" }
   s.source = {
     git: 'https://github.com/GEOSwift/GEOSwiftMapKit.git',
     tag: s.version
   }
   s.source_files = 'GEOSwiftMapKit/*.{swift,h}'
   s.macos.exclude_files = 'GEOSwiftMapKit/GEOSwift+MapKitQuickLook.swift'
-  s.dependency 'GEOSwift', '~> 7.0'
+  s.dependency 'GEOSwift', '~> 8.0.1'
 end

@@ -1,36 +1,24 @@
 ---
 os: osx
-osx_image: xcode11.3
-language: minimal
-
-cache:
-  directories:
-    - Carthage
+osx_image: xcode12.3
+language: shell
 
 jobs:
   include:
     - name: iOS - xcodebuild
       env: PLATFORM=iOS
-           SCHEME=GEOSwiftMapKit-iOS
-           SDK=iphonesimulator13.2
-           DESTINATION="platform=iOS Simulator,OS=13.3,name=iPhone 11"
-           WORKSPACE=GEOSwiftMapKit.xcworkspace
+           SDK=iphonesimulator14.3
+           DESTINATION="platform=iOS Simulator,OS=14.3,name=iPhone 11"
            RUN_CODECOV=true
     - name: tvOS - xcodebuild
       env: PLATFORM=tvOS
-           SCHEME=GEOSwiftMapKit-tvOS
-           SDK=appletvsimulator13.2
-           DESTINATION="platform=tvOS Simulator,OS=13.3,name=Apple TV"
-           WORKSPACE=GEOSwiftMapKit.xcworkspace
+           SDK=appletvsimulator14.3
+           DESTINATION="platform=tvOS Simulator,OS=14.3,name=Apple TV"
     - name: macOS - xcodebuild
       env: PLATFORM=macOS
-           SCHEME=GEOSwiftMapKit-macOS
-           SDK=macosx10.15
+           SDK=macosx11.1
            DESTINATION="platform=OS X"
-           WORKSPACE=GEOSwiftMapKit.xcworkspace
-    - name: macOS - SPM
-      env: USE_SPM=true
 
-before_install: travis_wait 30 ./scripts/travis_before_install.sh
+before_install: ./scripts/travis_before_install.sh
 script: ./scripts/travis_script.sh
 after_success: ./scripts/travis_after_success.sh

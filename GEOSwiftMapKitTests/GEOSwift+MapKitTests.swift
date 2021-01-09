@@ -55,7 +55,6 @@ final class MapKitTests: XCTestCase {
         let placemark = MKPlacemark(point: point)
 
         XCTAssertEqual(placemark.coordinate, CLLocationCoordinate2D(latitude: 9, longitude: 45))
-        XCTAssertNil(placemark.addressDictionary)
     }
 
     func testCreateMKPolylineFromLineString() {

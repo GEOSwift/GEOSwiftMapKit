@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/GEOSwift/geos.git",
         "state": {
           "branch": null,
-          "revision": "083e366bc831d0f951974151315383830a79d447",
-          "version": "5.0.0"
+          "revision": "bf897b992c7ff22b5271bacfb1646ff136b75df2",
+          "version": "6.0.1"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/GEOSwift/GEOSwift.git",
         "state": {
           "branch": null,
-          "revision": "fc208fd843a4ff3caf214845a123b9a6247d82ea",
-          "version": "7.0.0"
+          "revision": "868c4fc12019c1e5f989d429b5a7bf97433be48c",
+          "version": "8.0.1"
         }
       }
     ]
