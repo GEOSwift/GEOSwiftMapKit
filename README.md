@@ -3,7 +3,6 @@
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/GEOSwiftMapKit)](https://cocoapods.org/pods/GEOSwiftMapKit)
 [![SwiftPM Compatible](https://img.shields.io/badge/SwiftPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager/)
 [![Supported Platforms](https://img.shields.io/cocoapods/p/GEOSwiftMapKit)](https://github.com/GEOSwift/GEOSwiftMapKit)
-[![Build Status](https://img.shields.io/travis/GEOSwift/GEOSwiftMapKit/main)](https://travis-ci.com/GEOSwift/GEOSwiftMapKit)
 [![Code Coverage](https://img.shields.io/codecov/c/github/GEOSwift/GEOSwiftMapKit/main)](https://codecov.io/gh/GEOSwift/GEOSwiftMapKit)
 
 See [GEOSwift](https://github.com/GEOSwift/GEOSwift) for full details
@@ -53,8 +52,6 @@ To make a contribution:
   your contribution
 * Run `$ xed Package.swift` to open the project in Xcode.
 * Run `$ swiftlint` from the repo root and resolve any issues.
-* Sign in to travis-ci.org (if you've never signed in before, CI won't run to
-  verify your pull request)
 * Push your branch and create a pull request to `main`
 * One of the maintainers will review your code and may request changes
 * If your pull request is accepted, one of the maintainers should update the
