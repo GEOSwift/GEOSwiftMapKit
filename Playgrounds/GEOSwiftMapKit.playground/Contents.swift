@@ -4,10 +4,6 @@ import GEOSwiftMapKit
 import MapKit
 
 try! Point(wkt: "POINT(10 45)")
-//: > _Note:_ Build the GEOSwiftMapKit-iOS framework scheme targeting an
-//: iOS Simulator prior to using this Playground. You may have to close and
-//: reopen the project after building it.
-//:
 //: # GEOSwift
 //: _The Swift Geometry Engine_
 //:
