@@ -1,7 +1,6 @@
 # GEOSwiftMapKit
 
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/GEOSwiftMapKit)](https://cocoapods.org/pods/GEOSwiftMapKit)
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-brightgreen)](https://github.com/Carthage/Carthage)
 [![SwiftPM Compatible](https://img.shields.io/badge/SwiftPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager/)
 [![Supported Platforms](https://img.shields.io/cocoapods/p/GEOSwiftMapKit)](https://github.com/GEOSwift/GEOSwiftMapKit)
 [![Build Status](https://img.shields.io/travis/GEOSwift/GEOSwiftMapKit/main)](https://travis-ci.com/GEOSwift/GEOSwiftMapKit)
@@ -11,7 +10,7 @@ See [GEOSwift](https://github.com/GEOSwift/GEOSwift) for full details
 
 ## Requirements
 
-* iOS 9.0+, tvOS 9.2+, macOS 10.9+ (CocoaPods, Carthage, Swift PM)
+* iOS 9.0+, tvOS 9.2+, macOS 10.9+ (CocoaPods, Swift PM)
 * Swift 5.1
 
 > GEOS is licensed under LGPL 2.1 and its compatibility with static linking is
@@ -27,15 +26,6 @@ at least controversial. Use of geos without dynamic linking is discouraged.
         pod 'GEOSwiftMapKit'
 
 2. Run `$ pod install`
-
-### Carthage
-
-1. Add the following to your Cartfile:
-
-        github "GEOSwift/GEOSwiftMapKit" ~> 3.0.0
-
-2. Finish updating your project by following the [typical Carthage
-workflow](https://github.com/Carthage/Carthage#quick-start).
 
 ### Swift Package Manager
 
@@ -63,13 +53,6 @@ To make a contribution:
   your contribution
 * Run `$ xed Package.swift` to open the project in Xcode.
 * Run `$ swiftlint` from the repo root and resolve any issues.
-* Update GEOSwiftMapKit.xcodeproj: After making your changes, you also need to
-  update the Xcode project. You'll need a version of Carthage greater than 0.36.0
-  so that you can use the `--use-xcframeworks` option. Run
-  `$ carthage update --use-xcframeworks` to generate GEOSwift.xcframework and
-  geos.xcframework. Then open the GEOSwiftMapKit.xcodeproj and ensure that it
-  works with your changes. You'll likely only need to make changes if you've
-  added, removed, or renamed files.
 * Sign in to travis-ci.org (if you've never signed in before, CI won't run to
   verify your pull request)
 * Push your branch and create a pull request to `main`
