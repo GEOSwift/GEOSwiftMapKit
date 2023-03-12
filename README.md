@@ -3,6 +3,7 @@
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/GEOSwiftMapKit)](https://cocoapods.org/pods/GEOSwiftMapKit)
 [![SwiftPM Compatible](https://img.shields.io/badge/SwiftPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager/)
 [![Supported Platforms](https://img.shields.io/cocoapods/p/GEOSwiftMapKit)](https://github.com/GEOSwift/GEOSwiftMapKit)
+[![Build Status](https://github.com/GEOSwift/GEOSwiftMapKit/actions/workflows/main.yml/badge.svg)](https://github.com/GEOSwift/GEOSwiftMapKit/actions/workflows/main.yml)
 
 See [GEOSwift](https://github.com/GEOSwift/GEOSwift) for full details
 

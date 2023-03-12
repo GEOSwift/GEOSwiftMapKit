@@ -1,0 +1,91 @@
+---
+name: GEOSwiftMapKit
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  swiftlint:
+    runs-on: macos-12
+    steps:
+      - uses: actions/checkout@v3
+      - name: Swiftlint
+        run: swiftlint
+  podspec:
+    name: Lint Podspec for ${{ matrix.platform }}
+    runs-on: macos-12
+    strategy:
+      matrix:
+        platform: [ios, osx, tvos]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Lint Podspec
+        run: pod lib lint --platforms=${{ matrix.platform }}
+  xcodebuild:
+    name: ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - name: "xcodebuild (iOS 16.2, Xcode 14.2)"
+            os: macos-12
+            xcode-version: "14.2"
+            sdk: iphonesimulator16.2
+            destination: "platform=iOS Simulator,OS=16.2,name=iPhone 14"
+          - name: "xcodebuild (tvOS 16.1, Xcode 14.2)"
+            os: macos-12
+            xcode-version: "14.2"
+            sdk: appletvsimulator16.1
+            destination: "platform=tvOS Simulator,OS=16.1,name=Apple TV"
+          - name: "xcodebuild (macOS 13.1, Xcode 14.2)"
+            os: macos-12
+            xcode-version: "14.2"
+            sdk: macosx13.1
+            destination: "platform=OS X"
+          - name: "xcodebuild (iOS 15.2, Xcode 13.2.1)"
+            os: macos-11
+            xcode-version: "13.2.1"
+            sdk: iphonesimulator15.2
+            destination: "platform=iOS Simulator,OS=15.2,name=iPhone 13"
+          - name: "xcodebuild (tvOS 15.2, Xcode 13.2.1)"
+            os: macos-11
+            xcode-version: "13.2.1"
+            sdk: appletvsimulator15.2
+            destination: "platform=tvOS Simulator,OS=15.2,name=Apple TV"
+          - name: "xcodebuild (macOS 12.1, Xcode 13.2.1)"
+            os: macos-11
+            xcode-version: "13.2.1"
+            sdk: macosx12.1
+            destination: "platform=OS X"
+    steps:
+      - uses: actions/checkout@v3
+      - name: Select Xcode Version
+        run: sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode-version }}.app/Contents/Developer
+      - name: Install xcpretty
+        run: gem install xcpretty
+      - name: Build & Test
+        run: |
+          set -o pipefail && xcodebuild \
+            -scheme GEOSwiftMapKit \
+            -sdk "${{ matrix.sdk }}" \
+            -destination "${{ matrix.destination }}" \
+            clean test | xcpretty -c;
+  swift-cli-macos:
+    name: "swift-cli (${{ matrix.os }}, Xcode ${{matrix.xcode-version}})"
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: macos-11
+            xcode-version: "13.2.1"
+          - os: macos-12
+            xcode-version: "14.2"
+    steps:
+      - uses: actions/checkout@v3
+      - name: Select Xcode Version
+        run: sudo xcode-select -s /Applications/Xcode_${{ matrix.xcode-version }}.app/Contents/Developer
+      - name: Build & Test
+        run: swift test
