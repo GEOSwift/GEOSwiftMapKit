@@ -1,5 +1,4 @@
-// Exclude these tests when running in Swift PM because it doesn't support bundle resources yet
-#if !SWIFT_PACKAGE && os(iOS)
+#if os(iOS)
 
 import XCTest
 import MapKit

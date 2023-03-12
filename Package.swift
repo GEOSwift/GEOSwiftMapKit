@@ -19,7 +19,18 @@ let package = Package(
         .testTarget(
             name: "GEOSwiftMapKitTests",
             dependencies: ["GEOSwiftMapKit"],
-            path: "./GEOSwiftMapKitTests/"
+            path: "./GEOSwiftMapKitTests/",
+            resources: [
+                .copy("Snapshot Images/envelope.png"),
+                .copy("Snapshot Images/geometrycollection.png"),
+                .copy("Snapshot Images/linearring.png"),
+                .copy("Snapshot Images/linestring.png"),
+                .copy("Snapshot Images/multilinestring.png"),
+                .copy("Snapshot Images/multipoint.png"),
+                .copy("Snapshot Images/multipolygon.png"),
+                .copy("Snapshot Images/point.png"),
+                .copy("Snapshot Images/polygon.png"),
+            ]
         )
     ]
 )
