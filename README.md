@@ -37,8 +37,8 @@ at least controversial. Use of geos without dynamic linking is discouraged.
 
 ### Playground
 
-Explore more, interactively, in the playground. Open the project in Xcode,
-select the `GEOSwiftMapKit-iOS` scheme and open the playground file.
+Explore more, interactively, in the playground. Open Package.swift in Xcode,
+and open the playground file from the file navigator.
 
 ![Playground](/README-images/playground.png)
 

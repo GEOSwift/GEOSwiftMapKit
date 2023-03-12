@@ -1,7 +1,7 @@
 ---
 included:
-  - GEOSwiftMapKit
-  - GEOSwiftMapKitTests
+  - Sources
+  - Tests
 disabled_rules:
   - force_cast
   - identifier_name

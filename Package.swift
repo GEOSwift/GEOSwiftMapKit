@@ -13,13 +13,11 @@ let package = Package(
     targets: [
         .target(
             name: "GEOSwiftMapKit",
-            dependencies: ["GEOSwift"],
-            path: "./GEOSwiftMapKit/"
+            dependencies: ["GEOSwift"]
         ),
         .testTarget(
             name: "GEOSwiftMapKitTests",
             dependencies: ["GEOSwiftMapKit"],
-            path: "./GEOSwiftMapKitTests/",
             resources: [
                 .copy("Snapshot Images/envelope.png"),
                 .copy("Snapshot Images/geometrycollection.png"),
