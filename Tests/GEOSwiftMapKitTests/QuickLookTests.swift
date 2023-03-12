@@ -43,8 +43,11 @@ final class QuickLookTests: XCTestCase {
     let imageSize = CGSize(width: 400, height: 400)
     var context: CGContext!
 
-    override func setUp() {
-        super.setUp()
+    override func setUpWithError() throws {
+        try super.setUpWithError()
+        guard #available(iOS 16.0, *) else {
+            throw XCTSkip("Snapshot tests only pass on iOS 16 due to differences in system frameworks.")
+        }
         polygon = Polygon(exterior: linearRing)
         multiLineString = MultiLineString(
             lineStrings: [lineString, linearRing.lineString])
