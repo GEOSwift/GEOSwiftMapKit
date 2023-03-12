@@ -16,12 +16,10 @@ enum SnapshotImage: String {
     }
 
     var data: Data? {
-        guard let url = Bundle(for: BundleLocator.self)
+        guard let url = Bundle.module
             .url(forResource: rawValue, withExtension: "png") else {
                 return nil
         }
         return try? Data(contentsOf: url)
     }
 }
-
-private class BundleLocator {}
