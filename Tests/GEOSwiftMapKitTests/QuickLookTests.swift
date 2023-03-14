@@ -1,4 +1,4 @@
-#if os(iOS)
+#if os(iOS) && !targetEnvironment(macCatalyst)
 
 import XCTest
 import MapKit
@@ -23,7 +23,7 @@ final class QuickLookTests: XCTestCase {
             Point(x: 1, y: 0),
             Point(x: 1, y: 1)])
     var multiLineString: MultiLineString!
-    var polygon: Polygon!
+    var polygon: GEOSwift.Polygon!
     let otherPolygon = try! Polygon(
         exterior: Polygon.LinearRing(
             points: [
