@@ -44,7 +44,12 @@ jobs:
             os: macos-12
             xcode-version: "14.2"
             sdk: macosx13.1
-            destination: "platform=OS X"
+            destination: "platform=macOS"
+          - name: "xcodebuild (macCatalyst 13.1, Xcode 14.2)"
+            os: macos-12
+            xcode-version: "14.2"
+            sdk: macosx13.1
+            destination: "platform=macOS,variant=Mac Catalyst"
           - name: "xcodebuild (iOS 15.2, Xcode 13.2.1)"
             os: macos-11
             xcode-version: "13.2.1"
@@ -60,6 +65,11 @@ jobs:
             xcode-version: "13.2.1"
             sdk: macosx12.1
             destination: "platform=OS X"
+          - name: "xcodebuild (macCatalyst 12.1, Xcode 13.2.1)"
+            os: macos-11
+            xcode-version: "13.2.1"
+            sdk: macosx12.1
+            destination: "platform=OS X,variant=Mac Catalyst"
     steps:
       - uses: actions/checkout@v3
       - name: Select Xcode Version

@@ -98,13 +98,13 @@ extension MultiLineString: GEOSwiftQuickLook {
     }
 }
 
-extension Polygon.LinearRing: GEOSwiftQuickLook {
+extension GEOSwift.Polygon.LinearRing: GEOSwiftQuickLook {
     func quickLookDraw(in context: CGContext, imageSize: CGSize, mapRect: MKMapRect) {
         lineString.quickLookDraw(in: context, imageSize: imageSize, mapRect: mapRect)
     }
 }
 
-extension Polygon: GEOSwiftQuickLook {
+extension GEOSwift.Polygon: GEOSwiftQuickLook {
     func quickLookDraw(in context: CGContext, imageSize: CGSize, mapRect: MKMapRect) {
         let polygon = MKPolygon(polygon: self)
         let renderer = MKPolygonRenderer(overlay: polygon)
