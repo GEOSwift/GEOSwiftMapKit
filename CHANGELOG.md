@@ -1,3 +1,10 @@
+## 4.0.0
+
+* Updates to GEOSwift 10.0.0
+* Fixes build error on macCatalyst
+* Increases min Swift version to 5.5
+* Drops support for Carthage
+
 ## 3.0.0
 
 * Updated for Xcode 12
