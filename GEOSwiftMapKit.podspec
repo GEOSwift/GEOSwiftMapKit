@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'GEOSwiftMapKit'
-  s.version = '3.0.0'
+  s.version = '4.0.0'
   s.swift_version = '5.5'
   s.cocoapods_version = '~> 1.10'
   s.summary = 'MapKit support for GEOSwift'
