@@ -11,7 +11,11 @@ protocol GEOSwiftQuickLook: CustomPlaygroundDisplayConvertible, GeometryConverti
 extension GEOSwiftQuickLook {
     public var playgroundDescription: Any {
         let defaultReturnValue: Any = (try? geometry.wkt()) ?? self
-        guard let buffered = try? geometry.buffer(by: 0.1)?.intersection(with: Polygon.world),
+        var bufferValue: Double = 0
+        if case .point = geometry {
+            bufferValue = 0.1
+        }
+        guard let buffered = try? geometry.buffer(by: bufferValue)?.intersection(with: Polygon.world),
             let region = try? MKCoordinateRegion(containing: buffered) else {
                 return defaultReturnValue
         }

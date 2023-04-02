@@ -41,6 +41,9 @@ try! Point(wkt: "POINT(10 45)")
 // Create a POINT from its WKT representation.
 let point = try! Point(wkt: "POINT(10 45)")
 
+// Create a POLYGON from its WKT representation. Here: the Notre Dame cathedral building footprint
+let polygon = try! Polygon(wkt: "POLYGON ((2.349252343714653 48.85347829980472, 2.3489192520770246 48.853050271993254, 2.35034958675422 48.852599033892346, 2.350565116637 48.852593876862244, 2.3507845652447372 48.852712488426135, 2.3508237524963533 48.852874934242834, 2.350682678390797 48.85304253651725, 2.349252343714653 48.85347829980472))")
+
 // If the expected type is unknown, you can use Geometry(wkt:) and the
 // returned value will be one of the Geometry enum cases
 let geometry1 = try! Geometry(wkt: "POLYGON((35 10, 45 45.5, 15 40, 10 20, 35 10),(20 30, 35 35, 30 20, 20 30))")
