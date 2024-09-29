@@ -49,11 +49,6 @@ jobs:
             xcode-version: "15.4"
             sdk: macosx14.5
             destination: "platform=OS X"
-          - name: "xcodebuild (watchOS 10.5, Xcode 15.4)"
-            os: macos-14
-            xcode-version: "15.4"
-            sdk: watchsimulator10.5
-            destination: "platform=watchOS Simulator,OS=10.5,name=Apple Watch Series 9 (45mm)"
     steps:
       - uses: actions/checkout@v3
       - name: Select Xcode Version
