@@ -4,43 +4,92 @@ import UIKit
 import MapKit
 import GEOSwift
 
-protocol GEOSwiftQuickLook: CustomPlaygroundDisplayConvertible, GeometryConvertible {
-    func quickLookDraw(in context: CGContext, imageSize: CGSize, mapRect: MKMapRect)
+extension Point: @retroactive CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
 }
 
-extension GEOSwiftQuickLook {
-    public var playgroundDescription: Any {
-        let defaultReturnValue: Any = (try? geometry.wkt()) ?? self
-        var bufferValue: Double = 0
-        if case .point = geometry {
-            bufferValue = 0.1
-        }
-        guard let buffered = try? geometry.buffer(by: bufferValue)?.intersection(with: Polygon.world),
-            let region = try? MKCoordinateRegion(containing: buffered) else {
-                return defaultReturnValue
-        }
-        let mapView = MKMapView()
-        mapView.mapType = .standard
-        mapView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
-        mapView.region = region
-        guard let image = mapView.snapshot else {
-            return defaultReturnValue
-        }
-        UIGraphicsBeginImageContextWithOptions(image.size, true, image.scale)
-        guard let context = UIGraphicsGetCurrentContext() else {
-            return defaultReturnValue
-        }
-        defer { UIGraphicsEndImageContext() }
-        image.draw(at: .zero)
-        quickLookDraw(in: context, imageSize: image.size, mapRect: mapView.visibleMapRect)
-        return UIGraphicsGetImageFromCurrentImageContext() ?? defaultReturnValue
+extension MultiPoint: @retroactive CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
+}
+
+extension LineString: @retroactive CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
+}
+
+extension MultiLineString: @retroactive CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
+}
+
+extension GEOSwift.Polygon.LinearRing: @retroactive CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
+}
+
+extension GEOSwift.Polygon: @retroactive CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
+}
+
+extension MultiPolygon: @retroactive CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
+}
+
+extension GeometryCollection: @retroactive CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
+}
+
+extension Geometry: @retroactive CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
+}
+
+extension Envelope: @retroactive CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
+}
+
+private func makePlaygroundDescription(for g: (some GEOSwiftQuickLook)) -> Any {
+    let defaultReturnValue: Any = (try? g.geometry.wkt()) ?? g
+    var bufferValue: Double = 0
+    if case .point = g.geometry {
+        bufferValue = 0.1
+    }
+    guard let buffered = try? g.geometry.buffer(by: bufferValue)?.intersection(with: Polygon.world),
+          let region = try? MKCoordinateRegion(containing: buffered) else {
+        return defaultReturnValue
     }
 
-    fileprivate func draw(
+    let options = MKMapSnapshotter.Options()
+    options.region = region
+    options.size = CGSize(width: 400, height: 400)
+    var snapshot: MKMapSnapshotter.Snapshot?
+    let backgroundQueue = DispatchQueue.global(qos: .userInitiated)
+    let snapshotter = MKMapSnapshotter(options: options)
+    let semaphore = DispatchSemaphore(value: 0)
+    snapshotter.start(with: backgroundQueue) { s, _ in
+        snapshot = s
+        semaphore.signal()
+    }
+    _ = semaphore.wait(timeout: .now() + 3)
+    guard let snapshot else {
+        return defaultReturnValue
+    }
+    let format = UIGraphicsImageRendererFormat.default()
+    format.opaque = true
+    format.scale = snapshot.image.scale
+    return UIGraphicsImageRenderer(size: snapshot.image.size, format: format).image { context in
+        snapshot.image.draw(at: .zero)
+        g.quickLookDraw(in: context.cgContext, snapshot: snapshot)
+    }
+}
+
+private protocol GEOSwiftQuickLook: GeometryConvertible {
+    func quickLookDraw(in context: CGContext, snapshot: MKMapSnapshotter.Snapshot)
+}
+
+private extension GEOSwiftQuickLook {
+    func draw(
         in context: CGContext,
         imageSize: CGSize,
         mapRect: MKMapRect,
-        renderer: MKOverlayRenderer) {
+        renderer: MKOverlayRenderer
+    ) {
         context.saveGState()
 
         // scale the content to fit inside the image
@@ -60,128 +109,113 @@ extension GEOSwiftQuickLook {
 }
 
 extension Point: GEOSwiftQuickLook {
-    func quickLookDraw(in context: CGContext, imageSize: CGSize, mapRect: MKMapRect) {
-        let pin = MKPinAnnotationView(annotation: nil, reuseIdentifier: "")
-        if let pinImage = pin.image {
-            let coord = CLLocationCoordinate2D(self)
-            let mapPoint = MKMapPoint(coord)
-            let point = CGPoint(
-                x: round(CGFloat((mapPoint.x - mapRect.origin.x) / mapRect.size.width) * imageSize.width),
-                y: round(CGFloat((mapPoint.y - mapRect.origin.y) / mapRect.size.height) * imageSize.height))
-            var pinImageRect = CGRect(x: 0, y: 0, width: pinImage.size.width, height: pinImage.size.height)
-            pinImageRect = pinImageRect.offsetBy(dx: point.x - pinImageRect.width / 2,
-                                                 dy: point.y - pinImageRect.height)
-            pinImage.draw(in: pinImageRect)
-        }
+    func quickLookDraw(in context: CGContext, snapshot: MKMapSnapshotter.Snapshot) {
+        let coord = CLLocationCoordinate2D(self)
+        let point = snapshot.point(for: coord)
+        let rect = CGRect(origin: point, size: .zero).insetBy(dx: -10, dy: -10)
+        UIColor.red.setFill()
+        context.fillEllipse(in: rect)
     }
 }
 
 extension MultiPoint: GEOSwiftQuickLook {
-    func quickLookDraw(in context: CGContext, imageSize: CGSize, mapRect: MKMapRect) {
+    func quickLookDraw(in context: CGContext, snapshot: MKMapSnapshotter.Snapshot) {
         for point in points {
-            point.quickLookDraw(in: context, imageSize: imageSize, mapRect: mapRect)
+            point.quickLookDraw(in: context, snapshot: snapshot)
         }
     }
 }
 
 extension LineString: GEOSwiftQuickLook {
-    func quickLookDraw(in context: CGContext, imageSize: CGSize, mapRect: MKMapRect) {
-        let polyline = MKPolyline(lineString: self)
-        let renderer = MKPolylineRenderer(polyline: polyline)
-        renderer.lineWidth = 2
-        renderer.strokeColor = UIColor.blue.withAlphaComponent(0.7)
-        draw(in: context, imageSize: imageSize, mapRect: mapRect, renderer: renderer)
+    func quickLookDraw(in context: CGContext, snapshot: MKMapSnapshotter.Snapshot) {
+        UIColor.blue.withAlphaComponent(0.7).setStroke()
+        let path = UIBezierPath()
+        path.move(to: snapshot.point(for: CLLocationCoordinate2D(firstPoint)))
+        for point in points[1...] {
+            path.addLine(to: snapshot.point(for: CLLocationCoordinate2D(point)))
+        }
+        path.lineWidth = 2
+        path.stroke()
     }
 }
 
 extension MultiLineString: GEOSwiftQuickLook {
-    func quickLookDraw(in context: CGContext, imageSize: CGSize, mapRect: MKMapRect) {
+    func quickLookDraw(in context: CGContext, snapshot: MKMapSnapshotter.Snapshot) {
         for lineString in lineStrings {
-            lineString.quickLookDraw(in: context, imageSize: imageSize, mapRect: mapRect)
+            lineString.quickLookDraw(in: context, snapshot: snapshot)
         }
     }
 }
 
 extension GEOSwift.Polygon.LinearRing: GEOSwiftQuickLook {
-    func quickLookDraw(in context: CGContext, imageSize: CGSize, mapRect: MKMapRect) {
-        lineString.quickLookDraw(in: context, imageSize: imageSize, mapRect: mapRect)
+    func quickLookDraw(in context: CGContext, snapshot: MKMapSnapshotter.Snapshot) {
+        lineString.quickLookDraw(in: context, snapshot: snapshot)
     }
 }
 
 extension GEOSwift.Polygon: GEOSwiftQuickLook {
-    func quickLookDraw(in context: CGContext, imageSize: CGSize, mapRect: MKMapRect) {
-        let polygon = MKPolygon(polygon: self)
-        let renderer = MKPolygonRenderer(overlay: polygon)
-        renderer.lineWidth = 2
-        renderer.strokeColor = UIColor.blue.withAlphaComponent(0.7)
-        renderer.fillColor = UIColor.cyan.withAlphaComponent(0.2)
-        draw(in: context, imageSize: imageSize, mapRect: mapRect, renderer: renderer)
+    func quickLookDraw(in context: CGContext, snapshot: MKMapSnapshotter.Snapshot) {
+        UIColor.blue.withAlphaComponent(0.7).setStroke()
+        UIColor.cyan.withAlphaComponent(0.2).setFill()
+        let path = UIBezierPath()
+        path.move(to: snapshot.point(for: CLLocationCoordinate2D(exterior.points.first!)))
+        for point in exterior.points[1...] {
+            path.addLine(to: snapshot.point(for: CLLocationCoordinate2D(point)))
+        }
+        path.close()
+        for hole in holes {
+            path.move(to: snapshot.point(for: CLLocationCoordinate2D(hole.points.first!)))
+            for point in hole.points[1...] {
+                path.addLine(to: snapshot.point(for: CLLocationCoordinate2D(point)))
+            }
+            path.close()
+        }
+        path.lineWidth = 2
+        path.fill()
+        path.stroke()
     }
 }
 
 extension MultiPolygon: GEOSwiftQuickLook {
-    func quickLookDraw(in context: CGContext, imageSize: CGSize, mapRect: MKMapRect) {
+    func quickLookDraw(in context: CGContext, snapshot: MKMapSnapshotter.Snapshot) {
         for polygon in polygons {
-            polygon.quickLookDraw(in: context, imageSize: imageSize, mapRect: mapRect)
+            polygon.quickLookDraw(in: context, snapshot: snapshot)
         }
     }
 }
 
 extension GeometryCollection: GEOSwiftQuickLook {
-    func quickLookDraw(in context: CGContext, imageSize: CGSize, mapRect: MKMapRect) {
+    func quickLookDraw(in context: CGContext, snapshot: MKMapSnapshotter.Snapshot) {
         for geometry in geometries {
-            geometry.quickLookDraw(in: context, imageSize: imageSize, mapRect: mapRect)
+            geometry.quickLookDraw(in: context, snapshot: snapshot)
         }
     }
 }
 
 extension Geometry: GEOSwiftQuickLook {
-    func quickLookDraw(in context: CGContext, imageSize: CGSize, mapRect: MKMapRect) {
+    func quickLookDraw(in context: CGContext, snapshot: MKMapSnapshotter.Snapshot) {
         switch self {
         case let .point(point):
-            point.quickLookDraw(in: context, imageSize: imageSize, mapRect: mapRect)
+            point.quickLookDraw(in: context, snapshot: snapshot)
         case let .multiPoint(multiPoint):
-            multiPoint.quickLookDraw(in: context, imageSize: imageSize, mapRect: mapRect)
+            multiPoint.quickLookDraw(in: context, snapshot: snapshot)
         case let .lineString(lineString):
-            lineString.quickLookDraw(in: context, imageSize: imageSize, mapRect: mapRect)
+            lineString.quickLookDraw(in: context, snapshot: snapshot)
         case let .multiLineString(multiLineString):
-            multiLineString.quickLookDraw(in: context, imageSize: imageSize, mapRect: mapRect)
+            multiLineString.quickLookDraw(in: context, snapshot: snapshot)
         case let .polygon(polygon):
-            polygon.quickLookDraw(in: context, imageSize: imageSize, mapRect: mapRect)
+            polygon.quickLookDraw(in: context, snapshot: snapshot)
         case let .multiPolygon(multiPolygon):
-            multiPolygon.quickLookDraw(in: context, imageSize: imageSize, mapRect: mapRect)
+            multiPolygon.quickLookDraw(in: context, snapshot: snapshot)
         case let .geometryCollection(geometryCollection):
-            geometryCollection.quickLookDraw(in: context, imageSize: imageSize, mapRect: mapRect)
+            geometryCollection.quickLookDraw(in: context, snapshot: snapshot)
         }
     }
 }
 
 extension Envelope: GEOSwiftQuickLook {
-    func quickLookDraw(in context: CGContext, imageSize: CGSize, mapRect: MKMapRect) {
-        geometry.quickLookDraw(in: context, imageSize: imageSize, mapRect: mapRect)
-    }
-}
-
-// MARK: - MKMapView Snapshotting
-private extension MKMapView {
-    /**
-     Take a snapshot of the map with MKMapSnapshot, which is designed to work in the background,
-     so we block the calling thread with a semaphore.
-     */
-    var snapshot: UIImage? {
-        let options = MKMapSnapshotter.Options()
-        options.region = region
-        options.size = frame.size
-        var snapshotImage: UIImage?
-        let backgroundQueue = DispatchQueue.global(qos: .background)
-        let snapshotter = MKMapSnapshotter(options: options)
-        let semaphore = DispatchSemaphore(value: 0)
-        snapshotter.start(with: backgroundQueue) { snapshot, _ in
-            snapshotImage = snapshot?.image
-            semaphore.signal()
-        }
-        _ = semaphore.wait(timeout: .now() + 3)
-        return snapshotImage
+    func quickLookDraw(in context: CGContext, snapshot: MKMapSnapshotter.Snapshot) {
+        geometry.quickLookDraw(in: context, snapshot: snapshot)
     }
 }
 
