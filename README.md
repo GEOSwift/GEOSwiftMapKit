@@ -9,8 +9,8 @@ See [GEOSwift](https://github.com/GEOSwift/GEOSwift) for full details
 
 ## Requirements
 
-* iOS 9.0+, tvOS 9.2+, macOS 10.9+ (CocoaPods, Swift PM)
-* Swift 5.5
+* iOS 12.0+, tvOS 12.0+, macOS 10.13+ (CocoaPods, Swift PM)
+* Swift 5.9
 
 > GEOS is licensed under LGPL 2.1 and its compatibility with static linking is
 at least controversial. Use of geos without dynamic linking is discouraged.
@@ -30,7 +30,7 @@ at least controversial. Use of geos without dynamic linking is discouraged.
 
 1. Update the top-level dependencies in your `Package.swift` to include:
 
-        .package(url: "https://github.com/GEOSwift/GEOSwiftMapKit.git", from: "4.0.0")
+        .package(url: "https://github.com/GEOSwift/GEOSwiftMapKit.git", from: "5.0.0")
 
 2. Update the target dependencies in your `Package.swift` to include
 
