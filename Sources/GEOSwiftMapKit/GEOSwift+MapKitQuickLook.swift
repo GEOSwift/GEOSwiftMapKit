@@ -3,6 +3,7 @@ import UIKit
 import MapKit
 import GEOSwift
 
+#if compiler(>=6)
 extension Point: @retroactive CustomPlaygroundDisplayConvertible {
     public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
 }
@@ -42,6 +43,47 @@ extension Geometry: @retroactive CustomPlaygroundDisplayConvertible {
 extension Envelope: @retroactive CustomPlaygroundDisplayConvertible {
     public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
 }
+#else
+extension Point: CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
+}
+
+extension MultiPoint: CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
+}
+
+extension LineString: CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
+}
+
+extension MultiLineString: CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
+}
+
+extension GEOSwift.Polygon.LinearRing: CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
+}
+
+extension GEOSwift.Polygon: CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
+}
+
+extension MultiPolygon: CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
+}
+
+extension GeometryCollection: CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
+}
+
+extension Geometry: CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
+}
+
+extension Envelope: CustomPlaygroundDisplayConvertible {
+    public var playgroundDescription: Any { makePlaygroundDescription(for: self) }
+}
+#endif
 
 private func makePlaygroundDescription(for g: (some GEOSwiftQuickLook)) -> Any {
     let defaultReturnValue: Any = (try? g.geometry.wkt()) ?? g
