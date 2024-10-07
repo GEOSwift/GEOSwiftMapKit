@@ -1,5 +1,4 @@
-#if os(iOS)
-
+#if os(iOS) || os(tvOS)
 import UIKit
 import MapKit
 import GEOSwift
@@ -70,7 +69,7 @@ private func makePlaygroundDescription(for g: (some GEOSwiftQuickLook)) -> Any {
     guard let snapshot else {
         return defaultReturnValue
     }
-    let format = UIGraphicsImageRendererFormat.default()
+    let format = UIGraphicsImageRendererFormat.preferred()
     format.opaque = true
     format.scale = snapshot.image.scale
     return UIGraphicsImageRenderer(size: snapshot.image.size, format: format).image { context in
