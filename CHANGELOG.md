@@ -3,6 +3,8 @@
 * Updates to GEOSwift 11.0.0
 * Increases min Swift version to 5.9
 * Increases min deployment targets for Apple platforms
+* Expands QuickLook support to tvOS
+* Fixes some warnings when building with Xcode 16
 
 ## 4.0.0
 
