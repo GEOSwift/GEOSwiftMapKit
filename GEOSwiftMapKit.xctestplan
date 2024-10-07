@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "13C39BF1-17D7-4105-AD5C-3810194BC2B3",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "GEOSwiftMapKitTests",
+        "name" : "GEOSwiftMapKitTests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -1,25 +1,23 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "geos",
-        "repositoryURL": "https://github.com/GEOSwift/geos.git",
-        "state": {
-          "branch": null,
-          "revision": "f510e634c822116fca615064d889300dba40d761",
-          "version": "8.1.0"
-        }
-      },
-      {
-        "package": "GEOSwift",
-        "repositoryURL": "https://github.com/GEOSwift/GEOSwift.git",
-        "state": {
-          "branch": null,
-          "revision": "e55eef92fb533107b43e30fcf275223a5055797e",
-          "version": "10.0.0"
-        }
+  "pins" : [
+    {
+      "identity" : "geos",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/GEOSwift/geos.git",
+      "state" : {
+        "revision" : "4d8af495e7507f48f1ae9104102debdd2043917b",
+        "version" : "9.0.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "geoswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/GEOSwift/GEOSwift.git",
+      "state" : {
+        "revision" : "e42c062c2feb0df61373ae8cd6031a823a0dc981",
+        "version" : "11.0.0"
+      }
+    }
+  ],
+  "version" : 2
 }
