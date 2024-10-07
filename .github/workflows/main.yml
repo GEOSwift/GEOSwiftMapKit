@@ -34,6 +34,21 @@ jobs:
     strategy:
       matrix:
         include:
+          - name: "xcodebuild (iOS 18.0, Xcode 16.0)"
+            os: macos-14
+            xcode-version: "16"
+            sdk: iphonesimulator18.0
+            destination: "platform=iOS Simulator,OS=18.0,name=iPhone 16"
+          - name: "xcodebuild (tvOS 18.0, Xcode 16.0)"
+            os: macos-14
+            xcode-version: "16"
+            sdk: appletvsimulator18.0
+            destination: "platform=tvOS Simulator,OS=18.0,name=Apple TV"
+          - name: "xcodebuild (macOS 15.0, Xcode 16.0)"
+            os: macos-14
+            xcode-version: "16"
+            sdk: macosx15.0
+            destination: "platform=OS X"
           - name: "xcodebuild (iOS 17.5, Xcode 15.4)"
             os: macos-14
             xcode-version: "15.4"
@@ -44,7 +59,7 @@ jobs:
             xcode-version: "15.4"
             sdk: appletvsimulator17.5
             destination: "platform=tvOS Simulator,OS=17.5,name=Apple TV"
-          - name: "xcodebuild (macOS 14.5, Xcode 15.4)"
+          - name: "xcodebuild (macOS 14.7, Xcode 15.4)"
             os: macos-14
             xcode-version: "15.4"
             sdk: macosx14.5
@@ -70,6 +85,8 @@ jobs:
         include:
           - os: macos-14
             xcode-version: "15.4"
+          - os: macos-14
+            xcode-version: "16"
     steps:
       - uses: actions/checkout@v3
       - name: Select Xcode Version
