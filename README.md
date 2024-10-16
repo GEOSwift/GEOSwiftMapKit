@@ -7,10 +7,10 @@
 
 See [GEOSwift](https://github.com/GEOSwift/GEOSwift) for full details
 
-## Requirements
+## Minimum Requirements
 
-* iOS 12.0+, tvOS 12.0+, macOS 10.13+ (CocoaPods, Swift PM)
-* Swift 5.9
+* iOS 12.0, tvOS 12.0, macOS 10.13
+* Swift 5.9 compiler
 
 > GEOS is licensed under LGPL 2.1 and its compatibility with static linking is
 at least controversial. Use of geos without dynamic linking is discouraged.
